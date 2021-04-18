@@ -1,6 +1,9 @@
 # Introduction to Real Analysis
 My solutions to Kolmogorov's and Fomin's **Introduction to Real Analysis**.
 
+Testing out html-rendered math notes with MathJax.  
+https://www.mathjax.org/
+
 Low priority project, so this will likely take me a long time! :-)
 
 ### Chapters
