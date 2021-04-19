@@ -8,6 +8,10 @@ Low priority project, so this will likely take me a long time! :-)
 
 ### Chapters
 * **1. Set Theory**
+    * 1.1 Sets and Functions
+    * 1.2 Equivalence of Sets. The Power of a Set
+    * 1.3 Ordinal Sets and Ordinal Numbers
+    * 1.4 Systems of Sets
 * **2. Metric Spaces**
 * **3. Topological Spaces**
 * **4. Linear Spaces**
