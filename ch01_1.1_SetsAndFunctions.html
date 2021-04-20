@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Chapter 1 - Set Theory</title>
+    <title>Chapter 1 - Set Theory: 1.1 Sets and Functions</title>
     <link rel="stylesheet" href="styling.css">
     <script>
         MathJax = {
@@ -21,6 +21,8 @@
 \(
    \def\R{\mathbb{R}}
    \def\N{\mathbb{N}}
+   \def\Z{\mathbb{Z}}
+   \def\Q{\mathbb{Q}}
    \def\eps{\varepsilon}
    \def\epsilon{\varepsilon}
    \renewcommand{\geq}{\geqslant}
@@ -422,8 +424,8 @@ Sketching the graphs for $\alpha = 1,\ldots, 6$, which gives us a hint to the so
 <br /><br /><br />
 <img src="img/Kolm_ReAn_1.1_8.png" />
 <br /><br />
-Expressing the set explicitly; $A_\alpha = \{(x, 1/x^\alpha)\;|\; x > 0\}$, so each element contains two
-points corresponding to the cartesian coordinates. The first two sets are:
+Expressing the set explicitly; $A_\alpha = \{(x, 1/x^\alpha)\;|\; x > 0\}$, so each element contains a
+point corresponding to the cartesian coordinates. The first two sets are:
 $$
 A_1 =  \{(x, 1/x)\;|\; x > 0\}
 $$
@@ -460,45 +462,105 @@ $x = -2.6$ means $\langle x\rangle = 0.6$.<br /><br />
 <b>Claim</b>: Every closed interval of length 1 has the same image under $f$.
 <br /><br />
 <i>Proof</i>.<br />
-Asd
+Suppose $a$ and $b$ are two arbitrary, real numbers. We will consider the closed intervals
+$D_1 = [a, a+1]$ and $D_2 = [b, b+1]$. We want to prove that $f(D_1) = f(D_2)$, i.e. show that
+these sets are included in each other
+<br /><br />
+$\subset)$. Assume $x\in f(D_1)$. Since this is the fractional part, $x = 0.d_1d_2d_3\ldots$
+where $d_i$ is some integer between 1 and 9 for each $i$. Since $D_2$ is an interval of length
+1, there will be some $z\in D_2$ such that $z = c.d_1d_2d_3\ldots$, but then
+$f(z) = 0.d_1d_2d_3\ldots = x\in f(D_2)$ which shows that $f(D_1)\subset f(D_2)$.
+<br /><br />
+$\supset)$. By assuming $x\in f(D_2)$ and using the exact same argument as above, we can show that
+$f(D_2)\subset f(D_1)$.
+<br /><br />
+By inclusion both ways, $f(D_1) = f(D_2)$.
 <div class="proofend">&#9632;</div>
 <br /><br />
+The image of $f$ is $[0,1)$. For any integer $p\in\Z$, we will get $f(p) = 0$ and the rest of the
+interval is filled with all values that are not integers.
+<br /><br />
+The function $f$ is NOT one-to-one. Counter examples are $1.5$ and $2.5$ that both map to $0.5$
+which violates the injective property, so we cannot have a bijection and so $f$ is not one-to-one.
+<br /><br />
+The preimage of $1/4\leq y\leq 3/4$ will be the closed intervals:
+$$
+\ldots, [-1.75, -1.25], [-0.75, -0.25], [0.25, 0.75], [1.25, 1.75], [2.25, 2.75], \ldots
+$$
+Or, more generally:
+$$
+\Big\{[p+0.25, p+0.75]\;\big|\; p\in\Z\Big\}.
+$$
+We can find a partition (a collection of pairwise disjoint subsets of $\R$) by defining
+the following half-closed intervals:
+$$
+\Big\{[p, p+1)\;\big|\; p\in\Z\Big\}.
+$$
 
-
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
 <br />
 
+<h3>Problem 10</h3>
+Given a set $M$ and let $\mathscr{R}$ be the set of all ordered pairs on the form $(a,a)$
+with $a\in M$. Let $aRb$ iff $(a,b)\in\mathscr{R}$. Interpreting the relation $R$.
+<br /><br />
+Since $(a,b)\in\mathscr{R}$, this means that $b = a$, which again means that $aRb$ is $a=b$.
+The relation is simply equality.
+<br /><br />
+<br /><br />
 <br />
+Before going to the next problem. Recall the three properties of an equivalence relation
+$R$ defined on some set $M$. 
+<ul>
+    <li><i>Reflexivity</i>: $aRa$ for every $a\in M$.</li>
+    <li><i>Symmetry</i>: If $aRb$ then $bRa$</li>
+    <li><i>Transitivity</i>: If $aRb$ and $bRc$, then $aRc$</li>
+</ul>
+
 <br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-</div> <!-- End page div-->
+
+<h3>Problem 11</h3>
+Example of binary relations that do not satisfy all properties.
+<br /><br />
+(a). Reflexive and symmetric, but not transitive.
+<br /><br />
+Going out of the realm of mathematics and applying this to family relations.
+If we define $B$ as being blood relative (common grandparents), then
+$aBa$ is true for a person $a$. If $b$ is a cousin or sibling, then $aBb$ implies $bBa$ and vice versa.
+If $c$ is a cousin of $b$, and $b$ a cousin of $a$, then $aBb$ and $bBc$ holds, but not necessarily $aBc$.
+So the blood relation $B$ is reflexive and symmetric, but not transitive.
+<br /><br />
+(b). Reflexive, but neither symmetric nor transitive.
+<br /><br />
+Let $M$ be all humans, and define the relation $K$ which means to know someone's name.
+If we disregard people with amnesia etc. then all people know their own name, so $aKa$
+is satisfied. If $aKb$ it is not always the case that $bKa$,
+so this relation is not symmetric. (For instance if $b$ is a celebrity). It is not
+transitive, for $aKb$ and $bKc$ does not mean $aKc$. It is not always the case that person $a$
+knows everyone $b$ knows. In summary, the $K$ relation is reflexive, but not symmetric and not transitive.
+<br /><br />
+(c). Symmetric, but neither reflexive nor transitive.
+<br /><br />
+Again, let $M$ be all humans and let $R$ mean to be in a romantic relationship.
+A person $a$ cannot be in a romantic relationship with himself/herself, so $aRa$ is not possible.
+If $aRb$ then $bRa$ (disregarding some of the complexity of the human psyche here), which means
+the relation is symmetric. If $aRb$ and $bRc$ it is not always the case that $aRc$, such as in
+the case when $b$ is unfaithful to $a$. So transitivity is not satisfied.
+<br /><br />
+(d). Transitive, but neither reflexive nor symmetric.
+<br /><br />
+This is achieved with the strictly greater than operator. For some $a,b,c\in\R$,
+then it is not reflexive since $a < a$ is not true. And if $a < b$, then
+$b > a$ cannot be true. But if $a < b$ and $b < c$, then $a < c$ holds.
+The $<$ operator is not reflexive, not symmetric, but it is transitive.
+
+<br /><br />
+<br /><br />
+<br /><br />
+<br /><br />
+<br /><br />
+<br /><br />
+<br /><br />
+</div><!-- End page div-->
 </body>
 </html>
 
